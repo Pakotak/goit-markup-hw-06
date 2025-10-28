@@ -845,7 +845,7 @@ p {
   background-color: transparent;
   border: 1px solid #fff;
   border-radius: 4px;
-  width: 264px;
+  width: 288px;
   height: 40px;
   color: #fff;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
@@ -854,6 +854,12 @@ p {
   line-height: 2;
   letter-spacing: 0.04em;
   padding-left: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .footer-form-input {
+    width: 264px;
+  }
 }
 
 .footer-form-input::placeholder {
