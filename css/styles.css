@@ -47,7 +47,6 @@ body {
 }
 html,
 body {
-  height: 100%;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -55,7 +54,7 @@ body {
 
 /* #region Mobile Screen */
 .container {
-  min-width: 320px;
+  max-width: 320px;
   padding: 0 16px;
   margin: 0 auto;
 }
@@ -64,18 +63,14 @@ body {
 @media screen and (min-width: 768px) {
   .container {
     max-width: 768px;
-    margin: 0 auto;
-    padding: 0 16px;
   }
 }
 /* #endregion */
 /* #region Desktop */
 @media screen and (min-width: 1158px) {
   .container {
-    width: 100%;
     max-width: 1158px;
     padding: 0 15px;
-    margin: 0 auto;
   }
 }
 
@@ -114,7 +109,6 @@ p {
 }
 
 .burger-menu {
-  position: absolute;
   background-color: transparent;
   border: none;
   padding: 0;
@@ -154,7 +148,7 @@ p {
 }
 
 .logo-link {
-  margin-right: 76px;
+  display: block;
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
   font-size: 18px;
@@ -163,7 +157,7 @@ p {
   text-transform: uppercase;
   text-decoration: none;
   color: #4d5ae5;
-  margin-right: 120px;
+  padding: 16px 149px 16px 0;
 }
 
 .logo-studio {
@@ -185,6 +179,10 @@ p {
 }
 
 @media screen and (min-width: 768px) {
+  .logo-link {
+    padding: 24px 120px 24px 0;
+  }
+
   .menu-link {
     font-size: 16px;
     line-height: 24px;
@@ -213,7 +211,7 @@ p {
 
     position: absolute;
     left: 0;
-    bottom: -1px;
+    bottom: -3px;
 
     width: 100%;
     height: 4px;
@@ -247,6 +245,9 @@ p {
 }
 
 @media screen and (min-width: 1158px) {
+  .logo-link {
+    padding: 24px 76px 24px 0;
+  }
   .contact-list {
     display: flex;
     justify-content: flex-end;
@@ -262,6 +263,9 @@ p {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.02em;
+  }
+  .menu-link.current::after {
+    bottom: -1px;
   }
 }
 @media screen and (min-width: 1158px) {
@@ -292,10 +296,12 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  max-width: 1440px;
-  padding: auto;
-}
 
+  padding: 72px 52px;
+}
+.hero-container {
+  max-width: 320px;
+}
 @media (min-resolution: 192dpi) {
   .hero {
     background-image: linear-gradient(
@@ -305,20 +311,20 @@ p {
       url('../images/background/dark-bg_bg_mob@2x.jpg');
   }
 }
+
 .hero-title {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.1;
   letter-spacing: 0.02em;
   color: #ffffff;
-  min-width: 216px;
-  text-align: center;
-  padding: 72px 52px;
+  max-width: 216px;
+  margin: auto auto;
+  margin-bottom: 72px;
 }
 
 .hero-button {
   min-width: 169px;
-  margin-bottom: 72px;
   background-color: #4d5ae5;
   border: none;
   padding: 16px 32px;
@@ -343,17 +349,19 @@ p {
 @media only screen and (min-width: 768px) {
   .hero-title {
     font-size: 56px;
-    min-width: 320px;
-    padding: 112px 120px 36px;
-    margin: 0;
-  }
-  .hero-button {
-    margin-bottom: 112px;
+    max-width: 496px;
+    margin: auto auto;
+    margin-bottom: 36px;
   }
 }
 
 @media only screen and (min-width: 768px) {
+  .hero-container {
+    max-width: 768px;
+    padding: 0;
+  }
   .hero {
+    padding: 112px 136px;
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
@@ -380,6 +388,7 @@ p {
   }
   @media (min-resolution: 192dpi) {
     .hero {
+      padding: 188px 316px;
       background-image: linear-gradient(
           rgba(46, 47, 66, 0.7),
           rgba(46, 47, 66, 0.7)
@@ -390,10 +399,13 @@ p {
 }
 @media only screen and (min-width: 1158px) {
   .hero-title {
-    padding: 188px 316px 48px;
+    margin: auto auto;
+    margin-bottom: 48px;
   }
   .hero-button {
-    margin-bottom: 188px;
+  }
+  .hero-container {
+    max-width: 1440px;
   }
 }
 
@@ -459,6 +471,7 @@ p {
     letter-spacing: 0.02em;
     color: #2e2f42;
     margin-bottom: 8px;
+    text-align: left;
   }
   .feature-item-text {
     font-weight: 400;
@@ -495,7 +508,7 @@ p {
 /* Team */
 /* #region Team */
 .team {
-  padding: 96px 28px;
+  padding: 96px 0;
   display: flex;
   justify-content: center;
 }
@@ -539,8 +552,12 @@ p {
   color: #2e2f42;
   margin-bottom: 72px;
 }
+.team-container {
+  padding: 28px;
+}
 
 .team-list {
+  width: 264px;
   display: flex;
   flex-direction: column;
   gap: 72px;
@@ -626,7 +643,7 @@ p {
 /* Portfolio */
 /* #region Portfolio */
 .portfolio {
-  padding: 96px 16px;
+  padding: 96px 0;
 }
 
 .portfolio-titel {
@@ -755,7 +772,7 @@ p {
 /* #region Footer */
 .footer {
   background-color: #2e2f42;
-  padding: 100px 0;
+  padding: 96px 0;
 }
 
 .footer-top {
@@ -856,12 +873,6 @@ p {
   padding-left: 16px;
 }
 
-@media screen and (min-width: 768px) {
-  .footer-form-input {
-    width: 264px;
-  }
-}
-
 .footer-form-input::placeholder {
   color: #ffffff;
   opacity: 0.6;
@@ -895,17 +906,30 @@ p {
   margin-left: 16px;
 }
 
+@media only screen and (min-width: 768px) {
+  .footer-top {
+    padding: 96px 108px;
+  }
+  .footer {
+    padding: 0 0;
+  }
+}
 @media only screen and (min-width: 768px) and (max-width: 1157px) {
   .footer-top {
     display: flex;
     text-align: left;
     flex-wrap: wrap;
-    gap: 72px;
+    gap: 24px;
     padding-left: 92px;
     flex-direction: row;
+    align-items: baseline;
   }
   .footer-form {
     flex-direction: row;
+    gap: 24px;
+  }
+  .footer-form-block {
+    padding-top: 72px;
   }
 }
 
@@ -1077,7 +1101,7 @@ p {
 }
 
 .modal-form-input {
-  min-width: 256px;
+  min-width: 100%;
   height: 40px;
   font-family: Roboto;
   padding-left: 38px;
@@ -1108,7 +1132,7 @@ p {
 }
 
 .modal-form-message {
-  min-width: 256px;
+  min-width: 100%;
   height: 120px;
   padding: 8px 16px;
   border-radius: 4px;
@@ -1292,6 +1316,9 @@ input[type='checkbox']:checked + .agreement-wrapper > .agreement-checkbox {
     letter-spacing: 0.02em;
     color: #2e2f42;
   }
+  .mobile-menu-item:first-child .mobile-menu-link {
+    color: #4d5ae5;
+  }
 
   .mobile-menu-item:not(:last-child) {
     margin-bottom: 40px;
@@ -1316,6 +1343,15 @@ input[type='checkbox']:checked + .agreement-wrapper > .agreement-checkbox {
     gap: 24px;
   }
 
+  .mob-window-adrs {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+
+    line-height: 1.2;
+  }
+
   .mobile-contact-list {
     list-style: none;
     margin-bottom: 40px;
@@ -1327,11 +1363,8 @@ input[type='checkbox']:checked + .agreement-wrapper > .agreement-checkbox {
   }
 
   .mobile-contact-link {
-    font-weight: 500;
-    font-size: 20px;
-    letter-spacing: 0.02em;
-    color: #434455;
     text-decoration: none;
+    color: #434455;
   }
 
   .mobile-contact-item:first-child .mobile-contact-link {
