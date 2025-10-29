@@ -934,11 +934,10 @@ p {
 }
 
 @media only screen and (min-width: 1158px) {
-  .footer {
-    padding: 100px 0;
+  .footer-top {
+    gap: 0;
   }
   .footer-container {
-    padding-right: 120px;
   }
 
   .footer-top {
@@ -946,17 +945,22 @@ p {
     flex-direction: row;
     align-items: flex-start;
     text-align: left;
-    gap: 0;
+    padding: 100px 15px;
   }
   .footer-container-social {
-    padding-right: 80px;
+    margin-left: 120px;
   }
-
   .footer-form {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 24px;
+  }
+  .footer-form-input {
+    width: 264px;
+  }
+  .footer-form-block {
+    margin-left: 80px;
   }
 }
 
