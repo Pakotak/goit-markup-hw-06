@@ -361,7 +361,7 @@ p {
     padding: 0;
   }
   .hero {
-    padding: 112px 136px;
+    padding: 112px 120px;
     background-image: linear-gradient(
         rgba(46, 47, 66, 0.7),
         rgba(46, 47, 66, 0.7)
@@ -551,9 +551,6 @@ p {
   text-transform: capitalize;
   color: #2e2f42;
   margin-bottom: 72px;
-}
-.team-container {
-  padding: 28px;
 }
 
 .team-list {
